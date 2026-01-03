@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Africa To The World - Culture, Politics, Innovation</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <h1>AFRICA TO THE WORLD</h1>
+                <p class="tagline">Culture. Innovation. Perspective.</p>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#culture">Culture</a></li>
+                <li><a href="#politics">Politics</a></li>
+                <li><a href="#innovation">Innovation</a></li>
+                <li><a href="#fashion">Fashion</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#subscribe" class="cta-btn">Subscribe</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h2 class="hero-title">Amplifying African Voices,<br>Shaping Global Narratives</h2>
+            <p class="hero-description">
+                A curated platform exploring the continent's dynamic culture, progressive politics, 
+                innovative startups, and creative excellence.
+            </p>
+            <div class="hero-stats" id="stats-container">
+                <!-- D3.js will populate this -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Article -->
+    <section class="featured-section">
+        <div class="container">
+            <span class="section-label">Featured Story</span>
+            <div class="featured-grid">
+                <div class="featured-image">
+                    <div class="placeholder-image" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                        <span class="image-label">Feature</span>
+                    </div>
+                </div>
+                <div class="featured-content">
+                    <div class="category-tag">Politics & Governance</div>
+                    <h2>The New Wave of African Democratic Movements</h2>
+                    <p class="article-excerpt">
+                        Across the continent, a generation of engaged citizens is reshaping political 
+                        discourse, demanding transparency, and building institutions that reflect 
+                        their aspirations for inclusive governance.
+                    </p>
+                    <div class="article-meta">
+                        <span class="author">By Amara Okafor</span>
+                        <span class="date">January 2, 2026</span>
+                        <span class="read-time">12 min read</span>
+                    </div>
+                    <a href="#" class="read-more">Read Full Story →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Map Section -->
+    <section class="map-section" id="culture">
+        <div class="container">
+            <h2 class="section-title">Stories Across the Continent</h2>
+            <p class="section-description">Explore our latest coverage from diverse African nations</p>
+            <div id="africa-map" class="map-container"></div>
+        </div>
+    </section>
+
+    <!-- Articles Grid -->
+    <section class="articles-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Latest Features</h2>
+                <a href="#" class="view-all">View All Articles →</a>
+            </div>
+            
+            <div class="articles-grid">
+                <!-- Culture Article -->
+                <article class="article-card" id="culture-card">
+                    <div class="article-image placeholder-image" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+                        <span class="image-label">Culture</span>
+                    </div>
+                    <div class="article-content">
+                        <div class="category-tag">Culture</div>
+                        <h3>Afrobeats: The Global Sound Revolution</h3>
+                        <p>How African artists are dominating global charts and redefining modern music.</p>
+                        <div class="article-meta">
+                            <span>Chioma Adeyemi</span>
+                            <span>8 min read</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Innovation Article -->
+                <article class="article-card" id="innovation">
+                    <div class="article-image placeholder-image" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
+                        <span class="image-label">Innovation</span>
+                    </div>
+                    <div class="article-content">
+                        <div class="category-tag">Startups</div>
+                        <h3>Fintech Revolution: Kenya's Silicon Savannah</h3>
+                        <p>Inside the thriving ecosystem of African tech startups solving continental challenges.</p>
+                        <div class="article-meta">
+                            <span>Kwame Mensah</span>
+                            <span>10 min read</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Fashion Article -->
+                <article class="article-card" id="fashion">
+                    <div class="article-image placeholder-image" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);">
+                        <span class="image-label">Fashion</span>
+                    </div>
+                    <div class="article-content">
+                        <div class="category-tag">Fashion</div>
+                        <h3>Contemporary African Design on the Global Runway</h3>
+                        <p>Celebrating designers who blend heritage with avant-garde aesthetics.</p>
+                        <div class="article-meta">
+                            <span>Zara Nkosi</span>
+                            <span>6 min read</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Education Article -->
+                <article class="article-card" id="education">
+                    <div class="article-image placeholder-image" style="background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);">
+                        <span class="image-label">Education</span>
+                    </div>
+                    <div class="article-content">
+                        <div class="category-tag">Education</div>
+                        <h3>EdTech Solutions Bridging the Digital Divide</h3>
+                        <p>Innovative platforms expanding access to quality education across the continent.</p>
+                        <div class="article-meta">
+                            <span>Aisha Mohammed</span>
+                            <span>9 min read</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Politics Article -->
+                <article class="article-card" id="politics">
+                    <div class="article-image placeholder-image" style="background: linear-gradient(135deg, #d299c2 0%, #fef9d7 100%);">
+                        <span class="image-label">Politics</span>
+                    </div>
+                    <div class="article-content">
+                        <div class="category-tag">Governance</div>
+                        <h3>Youth Leadership in African Parliaments</h3>
+                        <p>Examining the rise of young politicians reshaping policy and representation.</p>
+                        <div class="article-meta">
+                            <span>Tendai Mwangi</span>
+                            <span>11 min read</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Diaspora Article -->
+                <article class="article-card">
+                    <div class="article-image placeholder-image" style="background: linear-gradient(135deg, #96fbc4 0%, #f9f586 100%);">
+                        <span class="image-label">Diaspora</span>
+                    </div>
+                    <div class="article-content">
+                        <div class="category-tag">Diaspora</div>
+                        <h3>Building Bridges: African Diaspora Networks</h3>
+                        <p>How global African communities maintain cultural ties while shaping their new homes.</p>
+                        <div class="article-meta">
+                            <span>Omar Hassan</span>
+                            <span>7 min read</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Data Visualization Section -->
+    <section class="data-section">
+        <div class="container">
+            <h2 class="section-title">By The Numbers</h2>
+            <p class="section-description">Understanding Africa's growth trajectory</p>
+            
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div id="startup-chart" class="chart"></div>
+                    <h4>Tech Startup Funding</h4>
+                    <p>Year-over-year growth across major hubs</p>
+                </div>
+                <div class="stat-card">
+                    <div id="creative-chart" class="chart"></div>
+                    <h4>Creative Industry Impact</h4>
+                    <p>Economic contribution by sector</p>
+                </div>
+                <div class="stat-card">
+                    <div id="education-chart" class="chart"></div>
+                    <h4>Education Access</h4>
+                    <p>Progress in digital learning adoption</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter-section" id="subscribe">
+        <div class="container">
+            <div class="newsletter-content">
+                <h2>Join the Conversation</h2>
+                <p>Get our weekly digest of stories that matter. Curated perspectives on culture, politics, innovation, and the people shaping Africa's future.</p>
+                <form class="newsletter-form" id="newsletter-form">
+                    <div class="form-group">
+                        <input type="email" placeholder="Your email address" required>
+                        <button type="submit" class="subscribe-btn">Subscribe</button>
+                    </div>
+                    <p class="form-note">Join 50,000+ readers. Unsubscribe anytime.</p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>AFRICA TO THE WORLD</h3>
+                    <p>Amplifying diverse voices and perspectives from across the African continent and its global diaspora.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Categories</h4>
+                    <ul>
+                        <li><a href="#culture">Culture</a></li>
+                        <li><a href="#politics">Politics & Governance</a></li>
+                        <li><a href="#innovation">Innovation & Startups</a></li>
+                        <li><a href="#fashion">Fashion & Design</a></li>
+                        <li><a href="#education">Education</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>About</h4>
+                    <ul>
+                        <li><a href="#">Our Mission</a></li>
+                        <li><a href="#">Contributors</a></li>
+                        <li><a href="#">Partner With Us</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Connect</h4>
+                    <ul>
+                        <li><a href="#">Twitter</a></li>
+                        <li><a href="#">Instagram</a></li>
+                        <li><a href="#">LinkedIn</a></li>
+                        <li><a href="#">Newsletter Archive</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Africa To The World. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
