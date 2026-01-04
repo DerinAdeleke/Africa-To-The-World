@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Africa To The World - Stories That Shape Tomorrow</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/ScrollTrigger.min.js"></script>
+</head>
+<body>
+    <!-- Progress Bar -->
+    <div class="scroll-progress"></div>
+
+    <!-- Version Switcher -->
+    <div class="version-switcher">
+        <a href="../index.html" class="version-btn">
+            ← Classic Version (V1)
+        </a>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <div class="logo-container">
+                    <svg class="logo-icon" width="40" height="40" viewBox="0 0 40 40">
+                        <path d="M20 5 L35 20 L20 35 L5 20 Z" fill="currentColor"/>
+                        <circle cx="20" cy="20" r="5" fill="white"/>
+                    </svg>
+                    <div>
+                        <h1>AFRICA TO THE WORLD</h1>
+                        <span class="tagline">Stories That Shape Tomorrow</span>
+                    </div>
+                </div>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#stories">Stories</a></li>
+                <li><a href="#voices">Voices</a></li>
+                <li><a href="#data">Insights</a></li>
+                <li><a href="#impact">Impact</a></li>
+                <li><a href="articles/politics.html">Politics</a></li>
+                <li><a href="articles/culture.html">Culture</a></li>
+                <li><a href="#subscribe" class="nav-cta">Subscribe</a></li>
+            </ul>
+            <button class="menu-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section with Parallax -->
+    <section class="hero-parallax" id="hero">
+        <div class="hero-background">
+            <div class="hero-shape shape-1"></div>
+            <div class="hero-shape shape-2"></div>
+            <div class="hero-shape shape-3"></div>
+            <div class="particle-container" id="particles"></div>
+        </div>
+        
+        <div class="hero-content">
+            <div class="hero-text">
+                <span class="hero-label">January 2026 Issue</span>
+                <h1 class="hero-title">
+                    <span class="title-line">Amplifying</span>
+                    <span class="title-line">African Voices,</span>
+                    <span class="title-line gradient-text">Shaping Global</span>
+                    <span class="title-line gradient-text">Narratives</span>
+                </h1>
+                <p class="hero-description">
+                    A curated platform exploring the continent's dynamic culture, progressive politics, 
+                    innovative startups, and creative excellence across 54 nations and the global diaspora.
+                </p>
+                <div class="hero-actions">
+                    <a href="#stories" class="btn-primary">Explore Stories</a>
+                    <a href="#subscribe" class="btn-secondary">Join 50K+ Readers</a>
+                </div>
+            </div>
+            
+            <div class="hero-visual">
+                <div id="hero-network" class="network-viz"></div>
+                <div class="hero-stats-overlay">
+                    <div class="stat-pill" id="live-readers">
+                        <span class="pulse-dot"></span>
+                        <span class="stat-value">2,847</span>
+                        <span class="stat-label">Active Readers</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="scroll-indicator">
+            <span>Scroll to explore</span>
+            <div class="scroll-line"></div>
+        </div>
+    </section>
+
+    <!-- Horizontal Scroll Section -->
+    <section class="horizontal-scroll-section" id="stories">
+        <div class="sticky-container">
+            <div class="horizontal-scroll-content">
+                <!-- Story Card 1: Politics -->
+                <article class="story-card card-politics">
+                    <div class="card-background"></div>
+                    <div class="card-content">
+                        <div class="card-header">
+                            <span class="card-category">Politics & Governance</span>
+                            <span class="card-date">Jan 2, 2026</span>
+                        </div>
+                        <h2 class="card-title">The New Wave of African Democratic Movements</h2>
+                        <p class="card-excerpt">
+                            Across the continent, a generation of engaged citizens is reshaping political 
+                            discourse, demanding transparency, and building institutions that reflect 
+                            their aspirations for inclusive governance.
+                        </p>
+                        <div class="card-author">
+                            <div class="author-avatar">AO</div>
+                            <div class="author-info">
+                                <div class="author-name">Amara Okafor</div>
+                                <div class="author-meta">12 min · Lagos, Nigeria</div>
+                            </div>
+                        </div>
+                        <a href="articles/politics.html" class="card-link">Read Full Story</a>
+                    </div>
+                    <div class="card-visual">
+                        <div class="visual-graphic" id="politics-viz"></div>
+                    </div>
+                </article>
+
+                <!-- Story Card 2: Innovation -->
+                <article class="story-card card-innovation">
+                    <div class="card-background"></div>
+                    <div class="card-content">
+                        <div class="card-header">
+                            <span class="card-category">Innovation & Startups</span>
+                            <span class="card-date">Dec 28, 2025</span>
+                        </div>
+                        <h2 class="card-title">Fintech Revolution: Kenya's Silicon Savannah</h2>
+                        <p class="card-excerpt">
+                            Inside the thriving ecosystem of African tech startups solving continental 
+                            challenges, from mobile banking to agricultural technology and beyond.
+                        </p>
+                        <div class="card-author">
+                            <div class="author-avatar">KM</div>
+                            <div class="author-info">
+                                <div class="author-name">Kwame Mensah</div>
+                                <div class="author-meta">10 min · Nairobi, Kenya</div>
+                            </div>
+                        </div>
+                        <a href="articles/innovation.html" class="card-link">Read Full Story</a>
+                    </div>
+                    <div class="card-visual">
+                        <div class="visual-graphic" id="innovation-viz"></div>
+                    </div>
+                </article>
+
+                <!-- Story Card 3: Culture -->
+                <article class="story-card card-culture">
+                    <div class="card-background"></div>
+                    <div class="card-content">
+                        <div class="card-header">
+                            <span class="card-category">Culture & Music</span>
+                            <span class="card-date">Dec 30, 2025</span>
+                        </div>
+                        <h2 class="card-title">Afrobeats: The Global Sound Revolution</h2>
+                        <p class="card-excerpt">
+                            How African artists are dominating global charts and redefining modern music, 
+                            from Lagos to London, from Accra to Atlanta.
+                        </p>
+                        <div class="card-author">
+                            <div class="author-avatar">CA</div>
+                            <div class="author-info">
+                                <div class="author-name">Chioma Adeyemi</div>
+                                <div class="author-meta">8 min · Accra, Ghana</div>
+                            </div>
+                        </div>
+                        <a href="articles/culture.html" class="card-link">Read Full Story</a>
+                    </div>
+                    <div class="card-visual">
+                        <div class="visual-graphic" id="culture-viz"></div>
+                    </div>
+                </article>
+
+                <!-- Story Card 4: Fashion -->
+                <article class="story-card card-fashion">
+                    <div class="card-background"></div>
+                    <div class="card-content">
+                        <div class="card-header">
+                            <span class="card-category">Fashion & Design</span>
+                            <span class="card-date">Dec 26, 2025</span>
+                        </div>
+                        <h2 class="card-title">Contemporary African Design on the Global Runway</h2>
+                        <p class="card-excerpt">
+                            Celebrating designers who blend heritage with avant-garde aesthetics, 
+                            bringing African fashion to the forefront of global style.
+                        </p>
+                        <div class="card-author">
+                            <div class="author-avatar">ZN</div>
+                            <div class="author-info">
+                                <div class="author-name">Zara Nkosi</div>
+                                <div class="author-meta">6 min · Johannesburg, SA</div>
+                            </div>
+                        </div>
+                        <a href="articles/fashion.html" class="card-link">Read Full Story</a>
+                    </div>
+                    <div class="card-visual">
+                        <div class="visual-graphic" id="fashion-viz"></div>
+                    </div>
+                </article>
+
+                <!-- Story Card 5: Education -->
+                <article class="story-card card-education">
+                    <div class="card-background"></div>
+                    <div class="card-content">
+                        <div class="card-header">
+                            <span class="card-category">Education & Technology</span>
+                            <span class="card-date">Dec 29, 2025</span>
+                        </div>
+                        <h2 class="card-title">EdTech Solutions Bridging the Digital Divide</h2>
+                        <p class="card-excerpt">
+                            Innovative platforms expanding access to quality education across the continent,
+                            connecting learners from Cairo to Cape Town.
+                        </p>
+                        <div class="card-author">
+                            <div class="author-avatar">AM</div>
+                            <div class="author-info">
+                                <div class="author-name">Aisha Mohammed</div>
+                                <div class="author-meta">9 min · Cairo, Egypt</div>
+                            </div>
+                        </div>
+                        <a href="articles/education.html" class="card-link">Read Full Story</a>
+                    </div>
+                    <div class="card-visual">
+                        <div class="visual-graphic" id="education-viz"></div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Map Section -->
+    <section class="map-reveal-section" id="voices">
+        <div class="section-header-centered">
+            <span class="section-label reveal-up">Global Reach</span>
+            <h2 class="section-title reveal-up">Stories Across the Continent</h2>
+            <p class="section-description reveal-up">
+                Explore our coverage spanning 54 nations and the diaspora
+            </p>
+        </div>
+        
+        <div class="interactive-map-container">
+            <div id="africa-map-advanced" class="advanced-map"></div>
+            <div class="map-controls">
+                <button class="map-filter active" data-category="all">All Stories</button>
+                <button class="map-filter" data-category="politics">Politics</button>
+                <button class="map-filter" data-category="culture">Culture</button>
+                <button class="map-filter" data-category="innovation">Innovation</button>
+            </div>
+            <div class="map-legend">
+                <div class="legend-item">
+                    <div class="legend-color" style="background: #e74c3c;"></div>
+                    <span>10+ Stories</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background: #3498db;"></div>
+                    <span>5-10 Stories</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background: #2ecc71;"></div>
+                    <span>1-5 Stories</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Data Visualization Section -->
+    <section class="data-story-section" id="data">
+        <div class="container">
+            <div class="section-header-split">
+                <div class="header-left reveal-left">
+                    <span class="section-label">By The Numbers</span>
+                    <h2 class="section-title">Understanding Africa's<br>Growth Trajectory</h2>
+                    <p class="section-description">
+                        Data-driven insights into the continent's evolving landscape across 
+                        technology, culture, governance, and human development.
+                    </p>
+                </div>
+                <div class="header-right reveal-right">
+                    <div class="data-highlight">
+                        <div class="highlight-number" id="gdp-growth">6.2%</div>
+                        <div class="highlight-label">Average GDP Growth</div>
+                        <div class="highlight-subtext">Projected 2026</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="data-grid">
+                <!-- Chart 1: Tech Investment -->
+                <div class="data-card reveal-up">
+                    <div class="data-card-header">
+                        <h3>Tech Startup Investment</h3>
+                        <div class="data-toggle">
+                            <button class="toggle-btn active" data-view="yearly">Yearly</button>
+                            <button class="toggle-btn" data-view="quarterly">Quarterly</button>
+                        </div>
+                    </div>
+                    <div id="investment-chart" class="chart-large"></div>
+                    <div class="data-insights">
+                        <div class="insight-item">
+                            <span class="insight-icon">↑</span>
+                            <span class="insight-text">43% increase from 2025</span>
+                        </div>
+                        <div class="insight-item">
+                            <span class="insight-icon">🏆</span>
+                            <span class="insight-text">Nigeria leads with $2.3B</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Chart 2: Creative Economy -->
+                <div class="data-card reveal-up">
+                    <div class="data-card-header">
+                        <h3>Creative Economy Impact</h3>
+                        <span class="data-period">2022-2026</span>
+                    </div>
+                    <div id="creative-economy-chart" class="chart-large"></div>
+                    <div class="data-insights">
+                        <div class="insight-item">
+                            <span class="insight-icon">🎵</span>
+                            <span class="insight-text">Music exports $4.2B annually</span>
+                        </div>
+                        <div class="insight-item">
+                            <span class="insight-icon">📈</span>
+                            <span class="insight-text">23% compound annual growth</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Chart 3: Digital Connectivity -->
+                <div class="data-card reveal-up">
+                    <div class="data-card-header">
+                        <h3>Internet Penetration</h3>
+                        <span class="data-period">By Region</span>
+                    </div>
+                    <div id="connectivity-chart" class="chart-large"></div>
+                    <div class="data-insights">
+                        <div class="insight-item">
+                            <span class="insight-icon">🌍</span>
+                            <span class="insight-text">520M internet users</span>
+                        </div>
+                        <div class="insight-item">
+                            <span class="insight-icon">📱</span>
+                            <span class="insight-text">Mobile-first adoption</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Chart 4: Youth Demographics -->
+                <div class="data-card reveal-up">
+                    <div class="data-card-header">
+                        <h3>Youth Population (15-35)</h3>
+                        <span class="data-period">Demographic Advantage</span>
+                    </div>
+                    <div id="demographics-chart" class="chart-large"></div>
+                    <div class="data-insights">
+                        <div class="insight-item">
+                            <span class="insight-icon">👥</span>
+                            <span class="insight-text">Youngest population globally</span>
+                        </div>
+                        <div class="insight-item">
+                            <span class="insight-icon">💡</span>
+                            <span class="insight-text">Innovation potential</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Impact Stories Section -->
+    <section class="impact-section" id="impact">
+        <div class="impact-background">
+            <div class="impact-gradient"></div>
+        </div>
+        
+        <div class="container">
+            <div class="section-header-centered">
+                <span class="section-label reveal-up">Real Impact</span>
+                <h2 class="section-title reveal-up">Stories That Changed Things</h2>
+                <p class="section-description reveal-up">
+                    How our reporting has contributed to meaningful change
+                </p>
+            </div>
+
+            <div class="impact-timeline">
+                <div class="timeline-line"></div>
+                
+                <div class="impact-item reveal-timeline">
+                    <div class="impact-marker">
+                        <div class="marker-dot"></div>
+                        <div class="marker-date">March 2025</div>
+                    </div>
+                    <div class="impact-content">
+                        <h3>Policy Change in Nigeria</h3>
+                        <p>Our investigative series on youth unemployment led to the creation of 
+                        a $100M job creation fund targeting tech education.</p>
+                        <div class="impact-metrics">
+                            <span class="metric">15,000 beneficiaries</span>
+                            <span class="metric">4 policy changes</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="impact-item reveal-timeline">
+                    <div class="impact-marker">
+                        <div class="marker-dot"></div>
+                        <div class="marker-date">July 2025</div>
+                    </div>
+                    <div class="impact-content">
+                        <h3>Environmental Protection in Kenya</h3>
+                        <p>Coverage of grassroots conservation efforts resulted in international 
+                        funding and protection of 2,000 hectares of critical habitat.</p>
+                        <div class="impact-metrics">
+                            <span class="metric">$5M raised</span>
+                            <span class="metric">12 species protected</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="impact-item reveal-timeline">
+                    <div class="impact-marker">
+                        <div class="marker-dot"></div>
+                        <div class="marker-date">November 2025</div>
+                    </div>
+                    <div class="impact-content">
+                        <h3>Education Access in Ghana</h3>
+                        <p>Our feature on EdTech solutions sparked partnerships that brought 
+                        digital learning tools to 500 rural schools.</p>
+                        <div class="impact-metrics">
+                            <span class="metric">50,000 students</span>
+                            <span class="metric">500 schools</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter-immersive" id="subscribe">
+        <div class="newsletter-background">
+            <canvas id="newsletter-canvas"></canvas>
+        </div>
+        
+        <div class="newsletter-content-box">
+            <div class="newsletter-icon">
+                <svg width="60" height="60" viewBox="0 0 60 60">
+                    <rect x="10" y="15" width="40" height="30" rx="2" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <path d="M10 15 L30 30 L50 15" stroke="currentColor" stroke-width="2" fill="none"/>
+                </svg>
+            </div>
+            
+            <h2>Join the Conversation</h2>
+            <p class="newsletter-pitch">
+                Get our weekly digest of stories that matter. Curated perspectives on culture, 
+                politics, innovation, and the people shaping Africa's future.
+            </p>
+
+            <form class="newsletter-form-advanced" id="newsletter-form">
+                <div class="form-row">
+                    <div class="form-field">
+                        <input type="text" placeholder="First Name" required id="first-name">
+                        <label>First Name</label>
+                    </div>
+                    <div class="form-field">
+                        <input type="email" placeholder="Email Address" required id="email">
+                        <label>Email Address</label>
+                    </div>
+                </div>
+                
+                <div class="form-interests">
+                    <p class="interests-label">I'm interested in:</p>
+                    <div class="interest-tags">
+                        <label class="interest-tag">
+                            <input type="checkbox" name="interest" value="politics">
+                            <span>Politics</span>
+                        </label>
+                        <label class="interest-tag">
+                            <input type="checkbox" name="interest" value="culture">
+                            <span>Culture</span>
+                        </label>
+                        <label class="interest-tag">
+                            <input type="checkbox" name="interest" value="innovation">
+                            <span>Innovation</span>
+                        </label>
+                        <label class="interest-tag">
+                            <input type="checkbox" name="interest" value="fashion">
+                            <span>Fashion</span>
+                        </label>
+                        <label class="interest-tag">
+                            <input type="checkbox" name="interest" value="education">
+                            <span>Education</span>
+                        </label>
+                    </div>
+                </div>
+
+                <button type="submit" class="submit-btn">
+                    <span class="btn-text">Subscribe to Newsletter</span>
+                    <span class="btn-icon">→</span>
+                </button>
+
+                <p class="form-note">
+                    Join 50,000+ readers. One email per week. Unsubscribe anytime.
+                </p>
+            </form>
+
+            <div class="social-proof">
+                <div class="subscriber-avatars">
+                    <div class="avatar">AO</div>
+                    <div class="avatar">KM</div>
+                    <div class="avatar">ZN</div>
+                    <div class="avatar">TM</div>
+                    <div class="avatar">+50K</div>
+                </div>
+                <p class="social-text">Trusted by readers in 120+ countries</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer-advanced">
+        <div class="container">
+            <div class="footer-main">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <svg width="50" height="50" viewBox="0 0 40 40">
+                            <path d="M20 5 L35 20 L20 35 L5 20 Z" fill="currentColor"/>
+                            <circle cx="20" cy="20" r="5" fill="white"/>
+                        </svg>
+                        <h3>AFRICA TO THE WORLD</h3>
+                    </div>
+                    <p class="footer-description">
+                        Amplifying diverse voices and perspectives from across the African continent 
+                        and its global diaspora since 2020.
+                    </p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Twitter">𝕏</a>
+                        <a href="#" aria-label="Instagram">IG</a>
+                        <a href="#" aria-label="LinkedIn">in</a>
+                        <a href="#" aria-label="YouTube">YT</a>
+                    </div>
+                </div>
+
+                <div class="footer-links">
+                    <div class="footer-col">
+                        <h4>Content</h4>
+                        <ul>
+                            <li><a href="articles/politics.html">Politics & Governance</a></li>
+                            <li><a href="articles/culture.html">Culture & Arts</a></li>
+                            <li><a href="articles/innovation.html">Innovation & Tech</a></li>
+                            <li><a href="articles/fashion.html">Fashion & Design</a></li>
+                            <li><a href="articles/education.html">Education</a></li>
+                            <li><a href="#">Diaspora Stories</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-col">
+                        <h4>About</h4>
+                        <ul>
+                            <li><a href="#">Our Mission</a></li>
+                            <li><a href="#">Editorial Standards</a></li>
+                            <li><a href="#">Contributors</a></li>
+                            <li><a href="#">Partner With Us</a></li>
+                            <li><a href="#">Advertise</a></li>
+                            <li><a href="#">Contact</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-col">
+                        <h4>Resources</h4>
+                        <ul>
+                            <li><a href="#">Newsletter Archive</a></li>
+                            <li><a href="#">Press Kit</a></li>
+                            <li><a href="#">Events</a></li>
+                            <li><a href="#">Podcasts</a></li>
+                            <li><a href="#">Reports</a></li>
+                            <li><a href="#">API Access</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-col">
+                        <h4>Legal</h4>
+                        <ul>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Terms of Service</a></li>
+                            <li><a href="#">Cookie Policy</a></li>
+                            <li><a href="#">Accessibility</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 Africa To The World. All rights reserved.</p>
+                <div class="footer-badges">
+                    <span class="badge">🏆 Webby Awards 2025</span>
+                    <span class="badge">📰 SPJ Award Winner</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/animations.js"></script>
+    <script src="js/visualizations.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
